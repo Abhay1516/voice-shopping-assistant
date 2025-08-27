@@ -1,0 +1,319 @@
+/* Custom Styles for Voice Shopping Assistant */
+
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --light-bg: #f8f9fa;
+    --dark-text: #212529;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+/* Card Enhancements */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 15px 15px 0 0 !important;
+    font-weight: 600;
+}
+
+/* Voice Button Animations */
+#voiceBtn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#voiceBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.3);
+}
+
+#voiceBtn.listening {
+    background: linear-gradient(45deg, #dc3545, #fd7e14);
+    border-color: #dc3545;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shopping List Items */
+.shopping-item {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease;
+}
+
+.shopping-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.shopping-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 2px;
+}
+
+.item-category {
+    font-size: 0.8em;
+    color: #6c757d;
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.item-quantity {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.item-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-sm.rounded-circle {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Suggestion Cards */
+.suggestion-item {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.suggestion-reason {
+    font-size: 0.75em;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+/* Category Tags */
+.category-tag {
+    background: linear-gradient(45deg, var(--primary-color), #0056b3);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    margin: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.category-tag:hover {
+    transform: scale(1.1);
+}
+
+/* Status Alerts */
+.alert {
+    border-radius: 10px;
+    border: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #cff4fc, #b6effb);
+    color: #055160;
+}
+
+.alert-secondary {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #41464b;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+/* Search Modal Enhancements */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    #voiceBtn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Voice Wave Animation */
+.voice-wave {
+    position: relative;
+    display: inline-block;
+}
+
+.voice-wave::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: wave 2s infinite;
+}
+
+@keyframes wave {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* Error States */
+.error-state {
+    color: var(--danger-color);
+    background: linear-gradient(135deg, #f8d7da, #f5c2c7);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Success States */
+.success-state {
+    color: var(--success-color);
+    background: linear-gradient(135deg, #d1e7dd, #badbcc);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Custom Scrollbar */
+.card-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
