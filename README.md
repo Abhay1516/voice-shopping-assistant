@@ -230,7 +230,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 If you encounter any issues:
 
-1. Check the [Issues](https://github.com/YOUR_USERNAME/voice-shopping-assistant/issues) page
+1. Check the [Issues](https://github.com/Abhay1516/voice-shopping-assistant.git) page
 2. Create a new issue with details
 3. Check browser console for error messages
 
